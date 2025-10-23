@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI Tools Hub — Top 5 AI Tools (2025)</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#071025;
+      --card:#0f1a35;
+      --muted:#a9b4d6;
+      --accent:#00b7ff;
+      --accent-2:#67e0ff;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1180px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background: linear-gradient(180deg,var(--bg) 0%, #08102a 60%);
+      color:#eaf0ff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Container */
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:40px 24px}
+
+    /* NAV */
+    header{
+      position:sticky;top:0;z-index:60;
+      background:linear-gradient(180deg, rgba(7,16,37,0.9), rgba(7,16,37,0.6));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .navwrap{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px;color:var(--accent)}
+    .brand .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:grid;place-items:center;font-weight:700;color:#042033;box-shadow:0 6px 20px rgba(0,183,255,0.08)
+    }
+    .brand h1{font-size:1rem;margin:0;letter-spacing:0.4px}
+    nav ul{list-style:none;display:flex;gap:18px;margin:0;padding:0;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:0.95rem;padding:8px;border-radius:8px}
+    nav a:hover, nav a.active{color:#fff;background:rgba(255,255,255,0.03)}
+    .cta{background:var(--accent);color:#021427;padding:10px 14px;border-radius:10px;font-weight:700;margin-left:8px;display:inline-block}
+    /* mobile menu */
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);font-size:20px}
+
+    /* HERO */
+    .hero{
+      display:flex;gap:32px;align-items:center;justify-content:space-between;padding:64px 0;
+    }
+    .hero-left{flex:1;min-width:240px}
+    .eyebrow{color:var(--accent);font-weight:700;letter-spacing:0.6px;margin-bottom:12px}
+    .hero h2{font-size:2.6rem;line-height:1.03;margin:0 0 18px;color:#eaf6ff}
+    .hero p{color:var(--muted);max-width:760px;margin-bottom:22px}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#042033}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted);background:transparent}
+
+    .hero-right{width:420px;max-width:44%;min-width:280px}
+    .card-hero{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);padding:18px;border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 8px 30px rgba(2,8,23,0.6);
+    }
+    .mini-row{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .mini-row .logo-sm{width:46px;height:46px;border-radius:10px;background:#081732;display:grid;place-items:center;color:var(--accent);font-weight:700}
+    .mini-row h4{margin:0;font-size:1rem}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .stat{background:var(--glass);padding:12px;border-radius:10px;text-align:center}
+    .stat strong{display:block;color:#fff;font-size:1.05rem}
+
+    /* Sections */
+    section{padding:64px 0;border-bottom:1px solid rgba(255,255,255,0.02)}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+    .section-head h3{margin:0;color:var(--accent);font-size:1.5rem}
+    .section-sub{color:var(--muted);font-weight:500}
+
+    /* Tools grid */
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .tool{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
+      transition:transform .25s ease, box-shadow .25s ease;
+    }
+    .tool:hover{transform:translateY(-8px);box-shadow:0 12px 40px rgba(2,8,23,0.6)}
+    .tool h4{margin:0 0 8px;color:var(--accent)}
+    .tool p{color:var(--muted);font-size:0.95rem;margin-bottom:12px}
+    .tool .tag{display:inline-block;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.03);font-weight:600;color:var(--muted);font-size:0.85rem}
+
+    /* Why AI */
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+    .why-list{list-style:none;padding-left:0}
+    .why-list li{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;margin-bottom:10px;font-weight:600;color:var(--muted)}
+    .why-illu{height:220px;border-radius:12px;background:linear-gradient(135deg,#06213a, #0a1230);display:grid;place-items:center;color:var(--accent)}
+
+    /* Comparison table */
+    .table-wrap{overflow:auto;background:transparent;padding:6px;border-radius:12px}
+    table{width:100%;border-collapse:collapse;min-width:680px}
+    th,td{padding:14px 12px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03)}
+    th{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#021427;font-weight:700}
+    td{color:var(--muted);}
+
+    /* Testimonials */
+    .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .test-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .quote{font-style:italic;color:var(--muted);margin-bottom:12px}
+    .person{display:flex;gap:12px;align-items:center}
+    .avatar{width:46px;height:46px;border-radius:50%;background:#062538;display:grid;place-items:center;color:var(--accent);font-weight:700}
+
+    /* Blog items */
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .post{padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .post h4{margin:0 0 8px}
+    .post p{color:var(--muted);font-size:0.95rem}
+
+    /* FAQ */
+    .faq{max-width:920px;margin:0 auto}
+    details{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid rgba(255,255,255,0.03)}
+    summary{cursor:pointer;font-weight:600;color:#fff}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:start}
+    .contact-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .form-row{display:flex;gap:8px;margin-bottom:10px}
+    .form-row input, textarea, input[type="email"]{
+      width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#eaf0ff;outline:none
+    }
+    textarea{min-height:130px;resize:vertical}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,0.02);margin-top:18px}
+    .socials{display:flex;gap:12px}
+
+    /* small screens */
+    @media (max-width:980px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero-right{width:100%;max-width:none}
+      .why-grid{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:720px){
+      nav ul{display:none}
+      .menu-toggle{display:inline-block}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="navwrap">
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div>
+          <h1>AI Tools Hub</h1>
+          <div style="font-size:12px;color:var(--muted)">Top AI picks • unbiased • crisp</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="navlist">☰</button>
+        <ul id="navlist">
+          <li><a href="#home" class="navlink active">Home</a></li>
+          <li><a href="#about" class="navlink">About</a></li>
+          <li><a href="#tools" class="navlink">Tools</a></li>
+          <li><a href="#why" class="navlink">Why AI</a></li>
+          <li><a href="#compare" class="navlink">Compare</a></li>
+          <li><a href="#testimonials" class="navlink">Testimonials</a></li>
+          <li><a href="#blog" class="navlink">Blog</a></li>
+          <li><a href="#faq" class="navlink">FAQ</a></li>
+          <li><a href="#contact" class="navlink">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="cta">Get Started</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO / HOME -->
+    <section id="home" class="hero" aria-label="Home section">
+      <div class="hero-left">
+        <div class="eyebrow">Top 5 • Curated • 2025</div>
+        <h2>Powerful AI tools — sharpen productivity, creativity & growth.</h2>
+        <p>Discover the best AI tools used by creators, developers and businesses. Practical reviews, direct comparisons and actionable insights — all in one place.</p>
+
+        <div class="hero-buttons">
+          <a class="btn btn-primary" href="#tools">Explore Tools</a>
+          <a class="btn btn-ghost" href="#why">Why AI Tools?</a>
+        </div>
+
+        <div style="margin-top:20px;color:var(--muted);font-size:0.95rem">
+          <strong>Free resources:</strong> Quick guides, examples, and starter prompts for each tool included below.
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card-hero" aria-hidden="false">
+          <div class="mini-row">
+            <div class="logo-sm">GPT</div>
+            <div>
+              <h4>Featured: ChatGPT</h4>
+              <div style="color:var(--muted);font-size:0.95rem">Adaptive text-generation, coding assistant & conversational AI.</div>
+            </div>
+          </div>
+
+          <div class="stat-grid" style="margin-top:8px">
+            <div class="stat"><small style="color:var(--muted)">Users</small><strong>100M+</strong></div>
+            <div class="stat"><small style="color:var(--muted)">Use cases</small><strong>Writing · Code · Chat</strong></div>
+            <div class="stat"><small style="color:var(--muted)">Ease</small><strong>★★★★★</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-label="About section">
+      <div class="section-head">
+        <h3>About AI Tools Hub</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">AI Tools Hub curates and reviews the most impactful AI products for creators and businesses. We test tools on performance, real-world usefulness, learning curve and cost-effectiveness — so you don't have to.</p>
+
+      <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent);margin-top:0">Mission</h4>
+          <p style="color:var(--muted)">Help people pick the right AI tools quickly — with clear comparisons, honest pros/cons and practical tips to get started the same day.</p>
+        </div>
+
+        <div style="flex:1;min-width:260px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent);margin-top:0">Who we help</h4>
+          <p style="color:var(--muted)">Students, freelancers, product teams, marketers, and solopreneurs who want to use AI without the guesswork.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLS (Top 5) -->
+    <section id="tools" aria-label="Top tools">
+      <div class="section-head">
+        <h3>Top 5 AI Tools</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">Short summaries, primary use-cases and quick tips for each tool.</p>
+
+      <div style="margin-top:18px" class="tools-grid">
+        <article class="tool" aria-labelledby="t1">
+          <h4 id="t1">1 — ChatGPT (OpenAI)</h4>
+          <p>Best for: conversation, code help, idea generation and drafting content.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="tag">Prompting</span>
+            <span class="tag">Coding</span>
+            <span class="tag">Research</span>
+          </div>
+        </article>
+
+        <article class="tool">
+          <h4>2 — Midjourney</h4>
+          <p>Best for: concept art & high-quality image generation from simple prompts.</p>
+          <div style="margin-top:10px"><span class="tag">Design</span><span class="tag">Visuals</span></div>
+        </article>
+
+        <article class="tool">
+          <h4>3 — Notion AI</h4>
+          <p>Best for: notes, summaries, meeting recaps and workflow automation inside Notion.</p>
+          <div style="margin-top:10px"><span class="tag">Productivity</span><span class="tag">Docs</span></div>
+        </article>
+
+        <article class="tool">
+          <h4>4 — Runway</h4>
+          <p>Best for: AI-assisted video editing, background removal and creative VFX workflows.</p>
+          <div style="margin-top:10px"><span class="tag">Video</span><span class="tag">Creators</span></div>
+        </article>
+
+        <article class="tool">
+          <h4>5 — Jasper</h4>
+          <p>Best for: marketing copy, long-form blog drafts and SEO-optimized content.</p>
+          <div style="margin-top:10px"><span class="tag">Marketing</span><span class="tag">Copy</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHY AI TOOLS -->
+    <section id="why" aria-label="Why AI tools are important">
+      <div class="section-head">
+        <h3>Why AI Tools Are Important</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">AI tools accelerate work, unlock creative possibilities and lower the barrier to technical tasks. They don't replace humans — they amplify skills and let teams do more with less.</p>
+
+      <div style="margin-top:18px" class="why-grid">
+        <div>
+          <ul class="why-list">
+            <li>Increase productivity: automate repetitive tasks and generate first drafts instantly.</li>
+            <li>Enhance creativity: create visuals, storyboards, and new concepts in minutes.</li>
+            <li>Improve decision-making: faster data summaries and insights from large documents.</li>
+            <li>Make advanced tech accessible: non-coders can use models via friendly interfaces.</li>
+          </ul>
+        </div>
+        <div class="why-illu" aria-hidden="true">
+          <div style="text-align:center">
+            <div style="font-size:20px;font-weight:700">AI • Amplify</div>
+            <div style="color:var(--muted);margin-top:8px">Work smarter, not harder</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section id="compare" aria-label="Comparison table">
+      <div class="section-head">
+        <h3>Side-by-side Comparison</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">Quick glance — price tiers, primary strengths and ease-of-use.</p>
+
+      <div style="margin-top:18px" class="table-wrap">
+        <table role="table" aria-label="Comparison of AI tools">
+          <thead>
+            <tr>
+              <th>Tool</th>
+              <th>Primary Use</th>
+              <th>Starting Price</th>
+              <th>Strength</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ChatGPT</td>
+              <td>Text generation, chat</td>
+              <td>Free / Plus</td>
+              <td>Versatile · Fast adoption</td>
+            </tr>
+            <tr>
+              <td>Midjourney</td>
+              <td>Image generation</td>
+              <td>Subscription</td>
+              <td>High-quality visuals</td>
+            </tr>
+            <tr>
+              <td>Notion AI</td>
+              <td>Notes & workflows</td>
+              <td>Paid add-on</td>
+              <td>Seamless docs integration</td>
+            </tr>
+            <tr>
+              <td>Runway</td>
+              <td>Video & effects</td>
+              <td>Free tier + paid</td>
+              <td>Fast prototyping</td>
+            </tr>
+            <tr>
+              <td>Jasper</td>
+              <td>Marketing content</td>
+              <td>Paid plans</td>
+              <td>SEO & copy optimization</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" aria-label="Testimonials">
+      <div class="section-head">
+        <h3>What People Say</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">Real results from users who integrated AI into their workflows.</p>
+
+      <div style="margin-top:18px" class="test-grid">
+        <div class="test-card">
+          <div class="quote">"ChatGPT helped me cut drafting time in half — now I ship content weekly instead of monthly."</div>
+          <div class="person"><div class="avatar">A</div><div><strong>Aisha Khan</strong><div style="color:var(--muted);font-size:13px">Content Lead</div></div></div>
+        </div>
+
+        <div class="test-card">
+          <div class="quote">"Midjourney produces concept art faster than any designer can iterate — perfect for prototypes."</div>
+          <div class="person"><div class="avatar">M</div><div><strong>Markus Lee</strong><div style="color:var(--muted);font-size:13px">Product Designer</div></div></div>
+        </div>
+
+        <div class="test-card">
+          <div class="quote">"Runway shortened our video edit cycle by 60% — huge advantage for marketing campaigns."</div>
+          <div class="person"><div class="avatar">S</div><div><strong>Sara Patel</strong><div style="color:var(--muted);font-size:13px">Videographer</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOG / INSIGHTS -->
+    <section id="blog" aria-label="Blog insights">
+      <div class="section-head">
+        <h3>Blog & Insights</h3>
+        <div style="flex:1"></div>
+      </div>
+      <p class="section-sub">Short guides and case studies to get practical with AI.</p>
+
+      <div style="margin-top:18px" class="blog-grid">
+        <article class="post">
+          <h4>How to write prompts that work</h4>
+          <p class="section-sub">Simple prompt templates that yield consistent results with ChatGPT and image models.</p>
+        </article>
+
+        <article class="post">
+          <h4>5 ways to use AI in marketing</h4>
+          <p class="section-sub">From ad copy to personalized landing pages — practical tactics that scale.</p>
+        </article>
+
+        <article class="post">
+          <h4>Beginner's guide to Runway</h4>
+          <p class="section-sub">Basic workflow for removing backgrounds and doing quick VFX edits.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-label="Frequently asked questions">
+      <div class="section-head">
+        <h3>FAQ</h3>
+        <div style="flex:1"></div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Are these tools safe to use with private data?</summary>
+          <div style="color:var(--muted);margin-top:8px">Many tools have clear privacy policies; avoid pasting highly sensitive personal or financial data unless the platform explicitly supports private/private-cloud options.</div>
+        </details>
+
+        <details>
+          <summary>Which tool is best for beginners?</summary>
+          <div style="color:var(--muted);margin-top:8px">ChatGPT and Notion AI are very beginner-friendly. For images, Midjourney is simple if you're comfortable using Discord (or an interface).</div>
+        </details>
+
+        <details>
+          <summary>Do these tools cost a lot?</summary>
+          <div style="color:var(--muted);margin-top:8px">Most have free tiers or trials. Paid plans scale by usage/features; pick based on the value they deliver to your workflow.</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-label="Contact">
+      <div class="section-head">
+        <h3>Contact & Subscribe</h3>
+        <div style="flex:1"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4 style="color:var(--accent);margin-top:0">Get in touch</h4>
+          <p style="color:var(--muted)">Have a suggestion, partnership idea or want a tool review? Send a message — we respond within 2 business days.</p>
+
+          <form id="contactForm" onsubmit="return handleForm(event)" novalidate style="margin-top:12px">
+            <div class="form-row">
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-row">
+              <input type="email" id="email" placeholder="Email address" required />
+            </div>
+            <div style="margin-bottom:10px">
+              <input type="text" id="subject" placeholder="Subject" required />
+            </div>
+            <div style="margin-bottom:12px">
+              <textarea id="message" placeholder="Your message" required></textarea>
+            </div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button type="submit" class="btn btn-primary">Send Message</button>
+              <div style="color:var(--muted);font-size:13px">or email <a href="mailto:hello@aitoolshub.example" style="color:var(--accent)">hello@aitoolshub.example</a></div>
+            </div>
+          </form>
+        </div>
+
+        <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)">
+          <h4 style="color:var(--accent);margin-top:0">Subscribe to updates</h4>
+          <p style="color:var(--muted)">Weekly newsletter with tool updates, prompt examples & case studies.</p>
+
+          <form id="subscribeForm" onsubmit="return handleSubscribe(event)" novalidate>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <input id="subEmail" type="email" placeholder="Your email" required />
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+            <div id="subMsg" style="margin-top:10px;color:var(--muted);font-size:13px"></div>
+          </form>
+
+          <div style="margin-top:18px">
+            <h5 style="margin:0 0 8px">Quick links</h5>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <a href="#tools" style="color:var(--muted);text-decoration:none">Top tools</a>
+              <a href="#blog" style="color:var(--muted);text-decoration:none">Latest posts</a>
+              <a href="#faq" style="color:var(--muted);text-decoration:none">FAQ</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div>
+        <strong style="color:var(--accent)">AI Tools Hub</strong>
+        <div style="color:var(--muted);font-size:13px">Curated AI tool reviews & practical insights © 2025</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+        <div class="socials">
+          <a href="#" style="color:var(--muted);text-decoration:none">Twitter</a>
+          <a href="#" style="color:var(--muted);text-decoration:none">LinkedIn</a>
+          <a href="#" style="color:var(--muted);text-decoration:none">GitHub</a>
+        </div>
+        <div style="color:var(--muted);font-size:13px">Made with ❤️</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Small JS: mobile menu, smooth nav, form demos -->
+  <script>
+    // Mobile menu toggle
+    const toggle = document.querySelector('.menu-toggle');
+    const navlist = document.getElementById('navlist');
+    toggle?.addEventListener('click', ()=> {
+      const showing = navlist.style.display === 'flex';
+      navlist.style.display = showing ? 'none' : 'flex';
+      navlist.style.flexDirection = 'column';
+      navlist.style.background = 'rgba(2,8,23,0.6)';
+      navlist.style.padding = '12px';
+      toggle.setAttribute('aria-expanded', (!showing).toString());
+    });
+
+    // Smooth scroll & active link update
+    document.querySelectorAll('a.navlink').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const id = a.getAttribute('href');
+        document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
+        // update active
+        document.querySelectorAll('.navlink').forEach(n=>n.classList.remove('active'));
+        a.classList.add('active');
+        if(window.innerWidth < 720) navlist.style.display = 'none';
+      });
+    });
+
+    // Simple contact form handler (demo only)
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subj = document.getElementById('subject').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!name || !email || !subj || !msg){
+        alert('Please complete all fields.');
+        return false;
+      }
+      // Demo behavior: show a success and reset
+      alert('Thanks ' + name + '! Your message has been received (demo).');
+      e.target.reset();
+      return false;
+    }
+
+    // Subscribe demo
+    function handleSubscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('subEmail').value.trim();
+      const subMsg = document.getElementById('subMsg');
+      if(!email) { subMsg.textContent = 'Please enter a valid email.'; return false; }
+      subMsg.style.color = '#9be7ff';
+      subMsg.textContent = 'Subscribed — check your inbox for a welcome email (demo).';
+      e.target.reset();
+      return false;
+    }
+
+    // Accessibility: close mobile menu on resize
+    window.addEventListener('resize', ()=> {
+      if(window.innerWidth > 720) navlist.style.display = 'flex';
+      else navlist.style.display = 'none';
+    });
+
+    // Set initial nav visibility according to width
+    if(window.innerWidth <= 720) navlist.style.display = 'none';
+  </script>
+</body>
+</html>
